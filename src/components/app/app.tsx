@@ -30,6 +30,13 @@ const App = () => (
       <Route path='*' element={<NotFound404 />} />
     </Routes>
 
+    {/* Show the modal when a `backgroundLocation` is set */}
+    {/* {state?.backgroundLocation && (
+      <Routes>
+        <Route path="/img/:id" element={<Modal />} />
+      </Routes>
+    )} */}
+
     <Routes>
       <Route
         path='/feed/:number'
