@@ -7,12 +7,15 @@ import {
 } from 'react-redux';
 import { ingredientsSlice } from './slices/ingredientsSlice';
 import { ingredientsReducer } from './slices/ingredientsSlice';
+import { constructorReducer } from './slices/constructorSlice';
+// import { ingredientsReducer, constructorReducer } from '@slices';
 
 // const rootReducer = () => { }; // Заменить на импорт настоящего редьюсера
 
 const rootReducer = combineReducers({
   // [ingredientsSlice.reducerPath]: ingredientsSlice.reducer
-  ingredientsReducer
+  ingredientsReducer,
+  constructorReducer
   // ingredientsR: ingredientsReducer
 });
 
