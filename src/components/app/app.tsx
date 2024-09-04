@@ -16,7 +16,9 @@ import { AppHeader, Modal, OrderInfo, IngredientDetails } from '@components';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../services/store';
 import { useEffect } from 'react';
-import { getIngredients } from '../../services/asyncThunks/ingredientsThunk';
+// import { getIngredients } from '../../services/asyncThunks/ingredientsThunk';
+import { getIngredients } from '@thunks';
+// import { getIngredients } from 'src/services/asyncThunks/ingredientsThunk'; ошибка пути
 // import { getAllIngredients } from '../../services/slices/ingredientsSlice';
 
 // const closeModal = () => {};
@@ -34,12 +36,10 @@ const App = () => {
     // dispatch(checkUserAuth());
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   console.log(dispatch(getIngredients()));
-  // }, []);
-
   const location = useLocation();
+  console.log(location);
   const backgroundLocation = location.state?.background;
+  console.log('backgroundLocation - ' + backgroundLocation);
 
   return (
     <>
