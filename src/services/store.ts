@@ -8,16 +8,22 @@ import {
 import { ingredientsSlice } from './slices/ingredientsSlice';
 import { ingredientsReducer } from './slices/ingredientsSlice';
 import { constructorReducer } from './slices/constructorSlice';
+import rootReducer from './rootReducer';
 // import { ingredientsReducer, constructorReducer } from '@slices';
 
 // const rootReducer = () => { }; // Заменить на импорт настоящего редьюсера
 
-const rootReducer = combineReducers({
-  // [ingredientsSlice.reducerPath]: ingredientsSlice.reducer
-  ingredientsReducer,
-  constructorReducer
-  // ingredientsR: ingredientsReducer
-});
+// const rootReducer = combineReducers({
+//   // [ingredientsSlice.reducerPath]: ingredientsSlice.reducer
+//   ingredientsReducer,
+//   constructorReducer
+//   // ingredientsR: ingredientsReducer
+// });
+
+// ingredients: TIngredientsState;
+// user: TInitialState;
+// orders: TInitialState;
+// constructorIngredient: TConstructorState;
 
 const store = configureStore({
   reducer: rootReducer,

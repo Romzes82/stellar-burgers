@@ -36,7 +36,7 @@ export const constructorSlice = createSlice({
       const { index, position } = action.payload;
       const payloadIndex = index + position;
 
-      if (payloadIndex < state.ingredients.length && payloadIndex >= 0) {
+      if (payloadIndex >= 0 && payloadIndex < state.ingredients.length) {
         const ingredientsIndex = state.ingredients[index];
         state.ingredients[index] = state.ingredients[payloadIndex];
         state.ingredients[payloadIndex] = ingredientsIndex;
