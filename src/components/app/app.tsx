@@ -15,8 +15,7 @@ import { AppHeader, Modal, OrderInfo, IngredientDetails } from '@components';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../services/store';
 import { useEffect } from 'react';
-import { getIngredients } from '@thunks';
-import { checkUserAuth } from '../../services/asyncThunks/userThunk';
+import { getIngredients, checkUserAuth } from '@thunks';
 import { OnlyAuth, OnlyUnAuth } from '../protectedRoute/protectedRoute';
 
 // const closeModal = () => {};

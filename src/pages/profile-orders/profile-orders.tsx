@@ -4,8 +4,7 @@ import { FC, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../services/store';
 import { getProfileOrders } from '../../services/slices/ordersSlice';
 import { getAllIngredients } from '../../services/slices/ingredientsSlice';
-import { orders as ordersAction } from '../../services/asyncThunks/ordersThunk';
-import { getIngredients } from '@thunks';
+import { getIngredients, orders as ordersAction } from '@thunks';
 
 export const ProfileOrders: FC = () => {
   /** TODO: взять переменную из стора */

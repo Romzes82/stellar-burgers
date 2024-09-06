@@ -8,7 +8,7 @@ import {
   clearIngredients,
   getConstructorItems
 } from '../../services/slices/constructorSlice';
-import { orderBurger } from '../../services/asyncThunks/ordersThunk';
+import { orderBurger } from '@thunks';
 import {
   getLoading,
   getOrder,

@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../services/store';
 import { getFeeds, getOrderModalData } from '../../services/slices/ordersSlice';
 import { getAllIngredients } from '../../services/slices/ingredientsSlice';
-import { orderByNumber } from '../../services/asyncThunks/ordersThunk';
+import { orderByNumber } from '@thunks';
 
 export const OrderInfo: FC = () => {
   /** TODO: взять переменные orderData и ingredients из стора */

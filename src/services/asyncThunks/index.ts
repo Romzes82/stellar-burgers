@@ -1,1 +1,11 @@
 export { getIngredients } from './ingredientsThunk';
+export { feeds } from './ordersThunk';
+export { orders } from './ordersThunk';
+export { orderBurger } from './ordersThunk';
+export { orderByNumber } from './ordersThunk';
+export { checkUserAuth } from './userThunk';
+export { register } from './userThunk';
+export { login } from './userThunk';
+export { logout } from './userThunk';
+export { userData } from './userThunk';
+export { userUpdate } from './userThunk';
