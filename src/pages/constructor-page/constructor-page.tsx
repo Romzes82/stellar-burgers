@@ -9,13 +9,11 @@ import { BurgerIngredients } from '../../components';
 import { BurgerConstructor } from '../../components';
 import { Preloader } from '../../components/ui';
 import { FC, useEffect, useState } from 'react';
-import { TIngredient } from '@utils-types';
-import { useSelector } from 'react-redux';
 import { getIngredientsLoading } from '../../services/slices/ingredientsSlice';
 import { getIngredients } from '@thunks';
 
 export const ConstructorPage: FC = () => {
-  const isIngredientsLoading = useSelector(getIngredientsLoading);
+  const isIngredientsLoading = useAppSelector(getIngredientsLoading);
 
   const dispatch = useAppDispatch();
   useEffect(() => {

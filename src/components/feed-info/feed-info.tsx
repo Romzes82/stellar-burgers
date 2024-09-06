@@ -14,7 +14,7 @@ const getOrders = (orders: TOrder[], status: string): number[] =>
   orders
     .filter((item) => item.status === status)
     .map((item) => item.number)
-    .slice(0, 20);
+    .slice(0, 50);
 
 export const FeedInfo: FC = () => {
   /** TODO: взять переменные из стора */

@@ -11,7 +11,6 @@ import {
 export const BurgerConstructorElement: FC<BurgerConstructorElementProps> = memo(
   ({ ingredient, index, totalItems }) => {
     const dispatch = useAppDispatch();
-    const constructorBurgers = useAppSelector(getConstructorIngredients);
     const handleMoveDown = () => {
       dispatch(sortIngredient({ index, position: 1 }));
     };

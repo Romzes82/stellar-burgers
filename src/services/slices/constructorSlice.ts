@@ -59,5 +59,4 @@ export const {
   clearIngredients
 } = constructorSlice.actions;
 
-// export default constructorSlice;
 export const constructorReducer = constructorSlice.reducer;
