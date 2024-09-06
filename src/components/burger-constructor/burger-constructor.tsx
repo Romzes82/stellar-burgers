@@ -2,17 +2,7 @@ import { FC, useMemo } from 'react';
 import { TConstructorIngredient } from '@utils-types';
 import { BurgerConstructorUI } from '@ui';
 import { useAppDispatch, useAppSelector } from '../../services/store';
-// import {
-//   clearIngredients,
-//   getConstructorItems
-// } from '../../services/constructor/reducer';
-// import {
-//   getLoading,
-//   getOrder,
-//   resetOrder
-// } from '../../services/orders/reducer';
 import { useLocation, useNavigate } from 'react-router-dom';
-// import { orderBurger } from '../../services/orders/actions';
 import { getUser } from '../../services/slices/userSlice';
 import {
   clearIngredients,
