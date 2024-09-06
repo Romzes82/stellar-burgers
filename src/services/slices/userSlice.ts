@@ -1,12 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { TUser } from '@utils-types';
-import {
-  login,
-  logout,
-  register,
-  userData,
-  userUpdate
-} from '../asyncThunks/userThunk';
+import { login, logout, register, userData, userUpdate } from '@thunks';
 import { deleteCookie, setCookie } from '../../utils/cookie';
 
 export type TInitialState = {

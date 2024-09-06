@@ -1,11 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { TOrder } from '../../utils/types';
-import {
-  feeds,
-  orderBurger,
-  orderByNumber,
-  orders
-} from '../asyncThunks/ordersThunk';
+import { feeds, orderBurger, orderByNumber, orders } from '@thunks';
 
 export type TInitialState = {
   order: TOrder | null;

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { TIngredient } from '@utils-types';
-import { getIngredients } from '../asyncThunks/ingredientsThunk';
+import { getIngredients } from '@thunks';
 
 export type TIngredientsState = {
   loading: boolean;
