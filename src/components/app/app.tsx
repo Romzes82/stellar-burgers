@@ -16,9 +16,7 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../services/store';
 import { useEffect } from 'react';
 import { getIngredients, checkUserAuth } from '@thunks';
-import { OnlyAuth, OnlyUnAuth } from '../protectedRoute/protectedRoute';
-
-// const closeModal = () => {};
+import { ProtectedRoute } from '../protectedRoute';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -42,24 +40,53 @@ const App = () => {
         <Route path='/' element={<ConstructorPage />} />
         <Route path='/feed' element={<Feed />} />
 
-        <Route path='/login' element={<OnlyUnAuth component={<Login />} />} />
+        <Route
+          path='/login'
+          element={
+            <ProtectedRoute onlyUnAuth>
+              <Login />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path='/register'
-          element={<OnlyUnAuth component={<Register />} />}
+          element={
+            <ProtectedRoute onlyUnAuth>
+              <Register />
+            </ProtectedRoute>
+          }
         />
         <Route
           path='/forgot-password'
-          element={<OnlyUnAuth component={<ForgotPassword />} />}
+          element={
+            <ProtectedRoute onlyUnAuth>
+              <ForgotPassword />
+            </ProtectedRoute>
+          }
         />
         <Route
           path='/reset-password'
-          element={<OnlyUnAuth component={<ResetPassword />} />}
+          element={
+            <ProtectedRoute onlyUnAuth>
+              <ResetPassword />
+            </ProtectedRoute>
+          }
         />
-
-        <Route path='/profile' element={<OnlyAuth component={<Profile />} />} />
+        <Route
+          path='/profile'
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path='/profile/orders'
-          element={<OnlyAuth component={<ProfileOrders />} />}
+          element={
+            <ProtectedRoute>
+              <ProfileOrders />
+            </ProtectedRoute>
+          }
         />
 
         <Route path='*' element={<NotFound404 />} />

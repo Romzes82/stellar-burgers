@@ -1,40 +1,30 @@
 import { Preloader } from '@ui';
-import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 import { getIsAuthChecked, getUser } from '../../services/slices/userSlice';
+import { useAppSelector } from '../../services/store';
 
 type TProtectedProps = {
   onlyUnAuth?: boolean;
-  component: React.JSX.Element;
+  children: React.ReactElement;
 };
 
-export const ProtectedRoute = ({
-  onlyUnAuth = false,
-  component
-}: TProtectedProps): React.JSX.Element => {
-  const isAuthChecked = useSelector(getIsAuthChecked);
-  const user = useSelector(getUser);
+export const ProtectedRoute = ({ onlyUnAuth, children }: TProtectedProps) => {
+  const isAuthChecked = useAppSelector(getIsAuthChecked);
+  const user = useAppSelector(getUser);
   const location = useLocation();
 
   if (!isAuthChecked) {
     return <Preloader />;
   }
 
-  if (onlyUnAuth && user) {
-    const { from } = location.state ?? { from: { pathname: '/' } };
-    return <Navigate to={from} />;
-  }
-
   if (!onlyUnAuth && !user) {
-    return <Navigate to='/login' state={{ from: location }} />;
+    return <Navigate replace to='/login' state={{ from: location }} />;
   }
 
-  return component;
-};
+  if (onlyUnAuth && user) {
+    const from = location.state?.from || { pathname: '/' };
+    return <Navigate replace to={from} />;
+  }
 
-export const OnlyAuth = ProtectedRoute;
-export const OnlyUnAuth = ({
-  component
-}: {
-  component: React.JSX.Element;
-}): React.JSX.Element => <ProtectedRoute component={component} onlyUnAuth />;
+  return children;
+};

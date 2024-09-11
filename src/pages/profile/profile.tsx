@@ -6,7 +6,9 @@ import { userUpdate } from '@thunks';
 
 export const Profile: FC = () => {
   const userApi = useAppSelector(getUser);
+  console.log('from profile ' + userApi?.name);
   const dispatch = useAppDispatch();
+
   const user = {
     name: userApi?.name || '',
     email: userApi?.email || ''

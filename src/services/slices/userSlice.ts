@@ -22,7 +22,8 @@ export const userSlice = createSlice({
       state.user = action.payload;
     },
     setIsAuthChecked: (state, action) => {
-      state.isAuthChecked = action.payload;
+      // state.isAuthChecked = action.payload;
+      state.isAuthChecked = true;
     }
   },
   selectors: {
