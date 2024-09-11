@@ -17,6 +17,8 @@ export const ProtectedRoute = ({ onlyUnAuth, children }: TProtectedProps) => {
     return <Preloader />;
   }
 
+  console.log(`onlyUnAuth - ${onlyUnAuth}  ,  name - ${user?.name}`);
+
   if (!onlyUnAuth && !user) {
     return <Navigate replace to='/login' state={{ from: location }} />;
   }
