@@ -2,6 +2,7 @@ import { FC, FormEvent, SyntheticEvent, useState } from 'react';
 import { LoginUI } from '@ui-pages';
 import { useAppDispatch } from '../../services/store';
 import { login } from '@thunks';
+// import { useForm } from '../../hooks/useForm';
 
 export const Login: FC = () => {
   const [email, setEmail] = useState('');
