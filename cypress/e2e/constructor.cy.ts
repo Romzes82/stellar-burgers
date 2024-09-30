@@ -10,8 +10,14 @@ describe('Cypress test constructor', () => {
   it('should add bun', () => {
     cy.get('[data-cy=buns]').contains('Добавить').click();
 
-    cy.get('[data-cy=constructor-bun-top]').should('contain', 'Краторная булка N-200i');
-    cy.get('[data-cy=constructor-bun-bottom]').should('contain', 'Краторная булка N-200i');
+    cy.get('[data-cy=constructor-bun-top]').should(
+      'contain',
+      'Краторная булка N-200i'
+    );
+    cy.get('[data-cy=constructor-bun-bottom]').should(
+      'contain',
+      'Краторная булка N-200i'
+    );
   });
 
   it('should add ingredient', () => {
@@ -21,5 +27,15 @@ describe('Cypress test constructor', () => {
       'contain',
       'Биокотлета из марсианской Магнолии'
     );
+  });
+
+  //Открытие и закрытие модального окна
+  it('should open/close modal', () => {
+    cy.get('[data-cy=modal]').should('not.exist');
+    cy.contains('Краторная булка N-200i').click();
+
+    cy.get('[data-cy=modal]').should('be.visible');
+    cy.get('[data-cy=modal-close]').click();
+    cy.get('[data-cy=modal]').should('not.exist');
   });
 });
