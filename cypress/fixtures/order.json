@@ -7,9 +7,9 @@
         "name": "name",
         "createdAt": "createdAt",
         "updatedAt": "updatedAt",
-        "number": 123,
+        "number": 12345,
         "ingredients": [
-            "123"
+            "12345"
         ]
     }
 }
