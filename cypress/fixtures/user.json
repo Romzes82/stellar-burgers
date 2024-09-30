@@ -1,7 +1,7 @@
 {
     "success": true,
-    "refreshToken": "refreshToken",
-    "accessToken": "accessToken",
+    "refreshToken": "test-refreshToken",
+    "accessToken": "test-accessToken",
     "user": {
         "email": "test@mail.ru",
         "name": "testName"
