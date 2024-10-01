@@ -1,4 +1,5 @@
 export type TIngredient = {
+  // __v?: number | string;
   _id: string;
   name: string;
   type: string;

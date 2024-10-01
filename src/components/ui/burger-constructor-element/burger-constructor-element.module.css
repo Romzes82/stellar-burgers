@@ -5,8 +5,12 @@
 }
 
 .element:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
+
+/* .element:not(:last-child) {
+  padding-bottom: 20px;
+} */
 
 .element_fullwidth {
   display: flex;
