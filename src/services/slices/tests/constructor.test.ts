@@ -16,7 +16,7 @@ describe('Jest test constructorSlice', () => {
         ingredients: []
       };
 
-      const testIngredientsData = {
+      const testIngredientData = {
         _id: '643d69a5c3f7b9001cfa093c',
         name: 'Краторная булка N-200i',
         type: 'bun',
@@ -32,11 +32,11 @@ describe('Jest test constructorSlice', () => {
 
       const result = constructorSlice.reducer(
         initialState,
-        addIngredient(testIngredientsData)
+        addIngredient(testIngredientData)
       );
 
       // сравниваем то что получилось с ожидаемым результатом
-      expect(testIngredientsData).toEqual({
+      expect(testIngredientData).toEqual({
         _id: result.bun?._id,
         name: result.bun?.name,
         type: result.bun?.type,

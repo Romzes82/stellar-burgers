@@ -5,7 +5,7 @@ import { getIngredients } from '@thunks';
 export type TIngredientsState = {
   loading: boolean;
   ingredients: TIngredient[];
-  error?: string | null;
+  error?: string | null | undefined;
 };
 
 export const initialState: TIngredientsState = {
