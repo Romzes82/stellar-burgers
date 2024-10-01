@@ -78,5 +78,56 @@ describe('Jest test constructorSlice', () => {
       const result = constructorSlice.reducer(initialState, clearIngredients());
       expect(result).toEqual({ bun: null, ingredients: [] });
     });
+
+    it('should sort ingredients by pressed svg-array', async () => {
+      const testSortIngredientData = [
+        {
+          _id: '643d69a5c3f7b9001cfa0941',
+          name: 'Биокотлета из марсианской Магнолии',
+          type: 'main',
+          proteins: 420,
+          fat: 142,
+          carbohydrates: 242,
+          calories: 4242,
+          price: 424,
+          image: 'https://code.s3.yandex.net/react/code/meat-01.png',
+          image_mobile:
+            'https://code.s3.yandex.net/react/code/meat-01-mobile.png',
+          image_large:
+            'https://code.s3.yandex.net/react/code/meat-01-large.png',
+          __v: 0,
+          id: '0qw6s1InRq-nXMqoN50q7'
+        },
+        {
+          _id: '643d69a5c3f7b9001cfa0942',
+          name: 'Соус Spicy-X',
+          type: 'sauce',
+          proteins: 30,
+          fat: 20,
+          carbohydrates: 40,
+          calories: 30,
+          price: 90,
+          image: 'https://code.s3.yandex.net/react/code/sauce-02.png',
+          image_mobile:
+            'https://code.s3.yandex.net/react/code/sauce-02-mobile.png',
+          image_large:
+            'https://code.s3.yandex.net/react/code/sauce-02-large.png',
+          __v: 0,
+          id: 'WVJWiZOU87MU5b6jHMWNG'
+        }
+      ];
+
+      const initialState = {
+        bun: null,
+        ingredients: testSortIngredientData
+      };
+
+      const result = constructorSlice.reducer(
+        initialState,
+        sortIngredient({ index: 0, position: +1 })
+      );
+      expect(result.ingredients[0]).toEqual(testSortIngredientData[1]);
+      expect(result.ingredients[1]).toEqual(testSortIngredientData[0]);
+    });
   });
 });
